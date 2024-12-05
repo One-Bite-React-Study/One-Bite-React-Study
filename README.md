@@ -2,7 +2,7 @@
    
    
 - [x] 섹션.03 - JavaScript 심화 :
-  🔗 [section02](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section02-javascript-advanced/js)
+  🔗 [section02/js](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section02-javascript-advanced/js)
   
 <br>
 

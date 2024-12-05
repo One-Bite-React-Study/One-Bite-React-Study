@@ -14,6 +14,6 @@
   press q + enter to quit
 ```
 
-
-
-
+- vite를 통해 생성한 React App에는 Web Server가 내장되어 있다.
+  `num run dev` 명령어는 React App Server를 가동시키는 명령어
+  
