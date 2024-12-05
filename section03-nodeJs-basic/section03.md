@@ -44,4 +44,12 @@
     **ES Moudle System**을 쓰겠다고 설정을 해줘야 한다.
     -> 설정하면 앞으로 해당 패키지는 **ES Moudle System**을 사용하겠다고 설정
     -> **ES Moudle** 로 설정하면 **Common Js**와 **ES Moudle**을 함께 사용할 수 없으므로 **Common Js**을 사용할 수 없게 된다.
-  
+
+
+### Node.js 라이브러리 사용
+
+- **package.json -> "dependencies"**: 라이브러리 설치 시 설치된 라이브러리와 해당 라이브러리 버전 정보가 작성된다.
+- **package-lock.json**: 패키지가 사용하고 있는 라이브러리들의 버전이나 정보를 `package.json` 보다 더 정확하고 엄밀하게 저장하는 파일, 
+  `package.json`에는 해당 라이브러리의 정확한 버전이 작성되지 않고 대략적인 버전이 표기되어 있다. ex) "^0.6.2"
+  즉, `package-lock.json`에 해당 라이브러리의 실제로 설치된 버전의 정보가 명시되어 있다.
+- **mode_modules**: 설치한 라이브러리가 실제로 저장되는 곳
