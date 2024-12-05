@@ -2,10 +2,16 @@ import React from 'react'
 
 const Button = ({text = '', color = 'black', children, ...rest}) => {
 
-  // children && console.log(children);  
+  const onClickButton = (e)=>{
+    // SyntheticBaseEvent
+    console.log(e);    
+  }
 
   return (
-    <button style={{color}}>
+    <button 
+      onClick={onClickButton}
+      // onMouseEnter={onClickButton}
+      style={{color}}>
       {text} - {color.toUpperCase()}
       {children}
     </button>
