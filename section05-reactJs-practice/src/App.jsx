@@ -1,32 +1,31 @@
-import './App.css'
-import Header  from './components/Header'; // 파일을 찾아가도록 내부적으로 자동 설정이 되어 있으므로 확장자 생략 가능
-import Main from './components/Main';
-import Footer from './components/Footer';
-import Button from './components/Button';
-
+import './App.css';
+import React, { useState } from 'react';
 
 // * Root Component
-function App() {  
-
-  const buttonProps = {
-    text: "메일",
-    color: "red",
-    a: 1,
-    b: 2,
-  }
+function App() {
+  const [count, setCount] = useState(0);
+  const [light, setLight] = useState('OFF');
 
   return (
-    <>      
+    <>
+      <div>
+        {light}
+        <button onClick={()=>{setLight(light === 'ON' ? 'OFF' : 'ON');}}>
+          { light === 'ON' ? '끄기' : '켜기'}</button>
+        </div>
 
-      {/* 전달할 props들을 객체로 만들어서 컴포넌트에 spread operator로 흩뿌려서 전달 */}
-      <Button {...buttonProps}/>
-      <Button text={"카페"}/>
-      <Button text={"블로그"}>
-        {/* <Header/> 컴포넌트를 props로 전달 */}
-        <Header/>
-      </Button>      
+      <div>
+        <h1>{count}</h1>
+        <button
+          onClick={() => {
+            setCount(count + 1);
+          }}
+        >
+          +
+        </button>
+      </div>
     </>
-  )
+  );
 }
 
 export default App;
