@@ -40,3 +40,8 @@
     - `module.exports`프로퍼티에 내보낼 값들을 객체 안에 담아서 내보낸다. 
     -  내장 함수 `require()`을 사용해 해당 경로에서 내보낸 모듈 객체를 불러온다.
   - **ES Module (ESM)** :
+    - `package.json`에서 `"type": "module"`추가 옵션을 설정해 
+    **ES Moudle System**을 쓰겠다고 설정을 해줘야 한다.
+    -> 설정하면 앞으로 해당 패키지는 **ES Moudle System**을 사용하겠다고 설정
+    -> **ES Moudle** 로 설정하면 **Common Js**와 **ES Moudle**을 함께 사용할 수 없으므로 **Common Js**을 사용할 수 없게 된다.
+  
