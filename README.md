@@ -1,11 +1,13 @@
 ## 📚 React-Hyungjin
    
    
-- [x] 섹션.03 - JavaScript 심화
+- [x] 섹션.03 - JavaScript 심화 :
+  🔗 [section02](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section02-javascript-advanced/js)
   
 <br>
 
-- [ ] 섹션.04 - Node.js 기초
+- [x] 섹션.04 - Node.js 기초 :
+  🔗 [section03.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section03-nodeJs-basic/section03.md)
 
 <br>
 
