@@ -21,7 +21,8 @@
 
 <br>
 
-- [ ] 섹션.07 - 프로젝트1. 카운터 앱
+- [x] 섹션.07 - 프로젝트1. 카운터 앱
+  🔗 [section05.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section06-counter-app/section06.md)
 
 <br>
 
