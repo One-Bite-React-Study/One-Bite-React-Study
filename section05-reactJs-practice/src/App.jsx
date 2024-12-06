@@ -1,7 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
-import { Bulb } from './components/Bulb';
-import { Count } from './components/Count';
+import { Register } from './components/Register';
 
 // 🔄 리액트 컴포넌트 리렌더링이 발생하는 상황
 //  1. 자신이 관리하는 `state`의 값이 변경될 때
@@ -12,8 +10,7 @@ import { Count } from './components/Count';
 function App() {
   return (
     <>
-      <Bulb />
-      <Count />
+      <Register />
     </>
   );
 }
