@@ -16,7 +16,8 @@
 
 <br>
 
-- [ ] 섹션.06 - React.js 입문
+- [x] 섹션.06 - React.js 입문
+  🔗 [section04.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section05-reactJs-practice/section05.md)
 
 <br>
 
