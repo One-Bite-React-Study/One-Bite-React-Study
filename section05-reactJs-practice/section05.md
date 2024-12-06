@@ -129,3 +129,48 @@
 
   그냥 일반 변수를 선언을 할 경우 해당 컴포넌트가 리렌더링 될 때
   해당 컴포넌트인 함수를 다시 실행하는 것이므로 변수가 초기화 되기 때문이다.
+
+
+<br>
+
+### 🪝 React Hooks
+
+  컴포넌트 마다 반복되어서 동작하는 로직이 있고 
+  해당 로직이 React Hook을 사용하는 로직이라면
+  그러한 로직은 Custom Hook을 만들어서 분리해 줄 수 있다.
+
+  ```jsx
+    import React, { useState } from 'react'
+
+    // 3가지 hook 관련 팁
+    // 1. 함수 컴포넌트, 커스텀 훅 내부에서만 호출 가능
+    // 2. 조건부로 호출될 수 는 없다.
+    // 3. 나만의 훅(Custom Hook)을 직접 만들 수 있다.
+
+    // * Custom Hook
+    // -> React Hook은 함수 컴포넌트 내부, 커스텀 훅 내부에서만 호출할 수 있으므로 함수명 앞에 접두사 `use`를 붙여줘야 한다.
+    function useInput(){
+      
+      const [input, setInput] = useState('');
+        
+      const onChange = ({target: {value}}) => setInput(value);
+
+      return { input, onChange };
+    }
+
+
+    export const HookExam = () => {
+
+      const { input, onChange } = useInput();
+      const { input: input2, onChange: onChange2} = useInput();
+      
+      return (
+        <div>
+          <input value={input} onChange={onChange} />
+          <input value={input2} onChange={onChange2} />
+        </div>
+      )
+    }
+
+  ```
+
