@@ -1,32 +1,33 @@
 ## 📚 React-Hyungjin
    
    
-- [x] 섹션.03 - JavaScript 심화 :
-  🔗 [section02/js](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section02-javascript-advanced/js)
+- [x] 섹션.03 - JavaScript 심화 :   
+  - 🔗 [section02/js](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section02-javascript-advanced/js)
   
 <br>
 
-- [x] 섹션.04 - Node.js 기초 :
-  🔗 [section03.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section03-nodeJs-basic/section03.md)
+- [x] 섹션.04 - Node.js 기초 :   
+  - 🔗 [section03.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section03-nodeJs-basic/section03.md)
 
 <br>
 
-- [x] 섹션.05 - React.js 개론
-  🔗 [section04.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section04-ReactJs-introduction/section04.md)
+- [x] 섹션.05 - React.js 개론 :   
+  - 🔗 [section04.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section04-ReactJs-introduction/section04.md)
 
 <br>
 
-- [x] 섹션.06 - React.js 입문
-  🔗 [section04.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section05-reactJs-practice/section05.md)
+- [x] 섹션.06 - React.js 입문 :   
+  - 🔗 [section05.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section05-reactJs-practice/section05.md)
 
 <br>
 
-- [x] 섹션.07 - 프로젝트1. 카운터 앱
-  🔗 [section05.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section06-counter-app/section06.md)
+- [x] 섹션.07 - 프로젝트1. 카운터 앱 :   
+  - 🔗 [section06.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section06-counter-app/section06.md)
 
 <br>
 
-- [ ] 섹션.08 - 라이프사이클
+- [ ] 섹션.08 - 라이프사이클 :   
+  - 🔗 [section07.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section07-lifecycle/section07.md)
 
 <br>
 
