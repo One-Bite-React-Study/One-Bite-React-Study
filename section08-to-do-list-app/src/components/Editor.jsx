@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
 import './Editor.css';
+import { useEffect } from 'react';
 
 export const Editor = ({onCreate}) => {
 
-  const inputRef = useRef(null);
+  const inputRef = useRef(null);  
 
   const onSubmit = () => {
     if(inputRef.current.value === '') {
@@ -13,7 +14,7 @@ export const Editor = ({onCreate}) => {
     }
 
     onCreate(inputRef.current.value);
-    
+
     inputRef.current.value = '';
   }
 
