@@ -1,0 +1,9 @@
+.App{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  width: 500px;
+  margin: 0 auto;
+
+
+}
