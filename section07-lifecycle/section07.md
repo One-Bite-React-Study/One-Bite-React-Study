@@ -60,3 +60,41 @@
   그러므로 변경된 `state`의 값을 바로 사용해서 무언가 *Side Effect*에 해당하는 부가적인 작업을 진행하려면 안되고   
   `useEffec()`를 이용해야 한다.
 
+<br>
+
+
+  ```jsx
+    import React, { useState, useEffect, useRef } from 'react'
+    
+    const isMount = useRef(false);
+
+    // * 1. Mount : 탄생
+    // -> Mount될 때 한번 실행
+      useEffect(()=>{
+        console.log('mount');      
+      }, [])
+      
+    // * 2. Update : 변화, 리렌더링
+    // -> Mount될 때 한번 실행 된 다음에 해당 컴포넌트가 리렌더링 될 때(Update) 마다 계속 실행
+      useEffect(()=>{
+
+        // * 최초 Mount될 때를 제외한 이후 업데이트되는 순간에 만 콜백을 실행하도록
+        if(!useRef.current){
+          isMount.current = true; 
+          return;
+        }
+
+        console.log('update');      
+      })
+
+    // * 3. UnMount: 죽음
+    useEffect(()=>{
+
+      // * Clearn Up 함수
+      return () =>{
+        console.log('UnMount!');      
+      }
+    },[])
+
+
+  ```
