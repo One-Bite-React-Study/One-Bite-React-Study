@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import './App.css';
 import { Header, Editor, List } from './components/_index';
 import React, { useState } from 'react';
@@ -26,16 +26,28 @@ const mockData = [
 
 function App() {  
   const [todos, setTodos] = useState(mockData);
+  const idRef= useRef(todos.length);
 
-  useEffect(()=>{
-    console.log(todos);
+  const onCreate = (content) =>{
+    const newTodo = {
+      id: idRef.current++,
+      isDone: false,
+      content: content,
+      data: new Date().getTime(),
+    }
+
+    setTodos([...todos, newTodo]);
+  }
+
+  // useEffect(()=>{
+  //   console.log(todos);
     
-  }, [])
+  // }, [])
 
   return (
     <div className='App'>
       <Header/>
-      <Editor/>
+      <Editor onCreate={onCreate} />
       <List />
     </div>
   )
