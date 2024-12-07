@@ -26,7 +26,7 @@
 
 <br>
 
-- [ ] 섹션.08 - 라이프사이클 :   
+- [x] 섹션.08 - 라이프사이클 :   
   - 🔗 [section07.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section07-lifecycle/section07.md)
 
 <br>
