@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Viewer, Controller } from './components/_index';
 
 
@@ -8,6 +8,17 @@ import { Viewer, Controller } from './components/_index';
 function App() {
 
   const [count, setCount] = useState(0);
+  const [input , setInput] = useState('');
+
+  // 1. 해당 컴포넌트가 렌더링될 때 최초로 한 번 실행
+  // 2. 의존성 배열에 있는 값이 Update될 때 마다 실행
+  // 3. 해당 컴포넌트가 UnMount가 될 때 실행
+  useEffect(()=>{
+
+    console.log({count, input});    
+
+  }, [count, input]); // * <- 의존성 배열(dependency array, deps)
+
 
   // 이벤트 핸들러를 부모 컴포넌트 내부에서 생성해서 `props`로 전달 
   const onClickButton = (value) => () => setCount(count + value);
@@ -15,6 +26,10 @@ function App() {
   return (
     <div className='App'>
       <h1>Simple Counter</h1>
+      <section>
+        <input value={input} onChange={({target: { value }})=> setInput(value) }/>
+      </section>
+
       <section>
         <Viewer count={count} />
       </section>
