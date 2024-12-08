@@ -27,9 +27,10 @@ export const List = ({ todos }) => {
 
       <div className="todos_wrapper">
         {/* 필터링된 todos를 화면에 뿌려준다. */}
-        {filteredTodos.map(({ id, ...todo }) => (
+        { filteredTodos.length ?  filteredTodos.map(({ id, ...todo }) => (
           <TodoItem key={id} {...todo} />
-        ))}
+        )) : <p style={{color: '#565656'}}> 검색 결과가 없습니다.. 🥺 </p>      
+        }
       </div>
     </div>
   );
