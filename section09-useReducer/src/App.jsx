@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './App.css';
-import { Header, Editor, List } from './components/_index';
+import { Header, Editor, List, Exam } from './components/_index';
 import React, { useState } from 'react';
 
 const mockData = [
@@ -68,9 +68,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header />
       <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} /> */}
+      <Exam />
     </div>
   );
 }
