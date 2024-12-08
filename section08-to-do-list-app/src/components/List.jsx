@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TodoItem } from './_index';
 import './List.css';
 
-export const List = ({ todos, onUpdate }) => {
+export const List = ({ todos, onUpdate, onDelete }) => {
   const [search, setSearch] = useState('');
 
   // input에 onChange가 실행될때 마다 해당 값을  `search` state에 설정 
@@ -28,7 +28,7 @@ export const List = ({ todos, onUpdate }) => {
       <div className="todos_wrapper">
         {/* 필터링된 todos를 화면에 뿌려준다. */}
         { filteredTodos.length ?  filteredTodos.map((todo) => (
-          <TodoItem key={todo.id} {...todo} onUpdate={onUpdate}/>
+          <TodoItem key={todo.id} {...todo} onUpdate={onUpdate} onDelete={onDelete} />
         )) : <p style={{color: '#565656'}}> 검색 결과가 없습니다.. 🥺 </p>      
         }
       </div>
