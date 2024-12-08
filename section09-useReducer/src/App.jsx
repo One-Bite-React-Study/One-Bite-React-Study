@@ -1,7 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useReducer } from 'react';
 import './App.css';
 import { Header, Editor, List, Exam } from './components/_index';
-import React, { useState } from 'react';
 
 const mockData = [
   {
@@ -24,54 +23,50 @@ const mockData = [
   },
 ];
 
+function reducer(state, action) {
+  switch (action.type) {
+    case 'CREATE':
+      return [...state, action.data];
+
+    case 'UPDATE':
+      return state.map((todo) => (todo.id === action.targetId ? { ...todo, isDone: !todo.isDone } : todo));
+
+    case 'DELETE':
+      return state.filter((todo) => todo.id !== action.targetId);
+
+    default:
+      return state;
+  }
+}
+
 function App() {
-  const [todos, setTodos] = useState(mockData);
+  const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(todos.length);
 
-  const onCreate = (content) => {
-    const newTodo = {
-      id: idRef.current++,
-      isDone: false,
-      content: content,
-      data: new Date().getTime(),
-    };
+  // 새로운 데이터 생성
+  const onCreate = (content) =>
+    dispatch({
+      type: 'CREATE',
+      data: {
+        id: idRef.current++,
+        isDone: false,
+        content,
+        date: new Date().getTime(),
+      },
+    });
 
-    setTodos([...todos, newTodo]);
-  };
+  // TodoItem 체크 박스를 클릭했을 때 실행
+  const onUpdate = (targetId) => dispatch({ type: 'UPDATE', targetId });
 
-  // 체크 박스를 클릭했을 때 실행
-  const onUpdate = (targetId) => {
-    // todos State의 값들 중에
-    // targetId와 일치하는 id를 갖는 `todoItem`의 `isDone` 변경
-
-    // 인수: todos 배열에서 targetId와 일치하는 id를 갖는 요소의 데이터만 딱 바꾼 새로운 배열
-    setTodos(
-      todos.map((todo) => {
-        return todo.id === targetId
-          ? {
-              // targetId와 id 값이 같은 요소일 경우
-              // 기존 todo요소를 spread operator로 흩뿌리고, `isDone`속성을 not연산자로 반전 시켜 `isDone`속성에 적용한다.
-              ...todo,
-              isDone: !todo.isDone,
-            }
-          : todo; // 걸리는 요소가 없으면 기존 `todo`를 반환
-      })
-    );
-  };
-
-
-  const onDelete = (targetId) =>{
-    // 인수: todos 배열에서 targetId와 일치하는 id를 갖는 요소만 삭제한 새로운 배열
-    setTodos(todos.filter(todo =>todo.id !== targetId));
-  };
-
+  // TodoItem 삭제 버튼을 클릭했을 때 실행
+  const onDelete = (targetId) => dispatch({ type: 'DELETE', targetId });
 
   return (
     <div className="App">
-      {/* <Header />
+      <Header />
       <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} /> */}
-      <Exam />
+      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      {/* <Exam /> */}
     </div>
   );
 }
