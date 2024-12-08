@@ -21,7 +21,7 @@
       switch (action.type) {
         case 'INCREASE': return state + action.data; 
         case 'DECREASE': return state - action.data;
-        default: state;
+        default: return state;
       }
     }
 

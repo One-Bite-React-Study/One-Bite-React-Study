@@ -32,12 +32,13 @@
 <br>
 
 - [x] 섹션.09 - 프로젝트2. 투두리스트 CRUD
-    - 🐣 **Create** : [Create - add To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/bc752b7d9d11207a06623d78d966e76f131e2feb)   
-    - input에 값을 입력 후 해당 값을 최상위 부모 컴포넌트 `state`에 추가하기
+    - 🐣 **Create** :   
+    [Create - add To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/bc752b7d9d11207a06623d78d966e76f131e2feb)   
+      - input에 값을 입력 후 해당 값을 최상위 부모 컴포넌트 `state`에 추가하기
 
-    - 입력값이 빈 값일 경우 방지 처리
+      - 입력값이 빈 값일 경우 방지 처리
 
-    - `onKeyDown` 이벤트로 엔터 키를 누를 시 입력 데이터가 추가되도록 구현
+      - `onKeyDown` 이벤트로 엔터 키를 누를 시 입력 데이터가 추가되도록 구현
 
     <br>
 
@@ -63,7 +64,8 @@
 
     <br>
 
-    - 🔄 **Update** : [Update - Modifying To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/02cc31732d484eed9138209d8f9b8dbd99d3cddd)   
+    - 🔄 **Update** :   
+    [Update - Modifying To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/02cc31732d484eed9138209d8f9b8dbd99d3cddd)   
       
       ```
         1. `<TodoItem/>`컴포넌트의 체크 박스를 클릭했을 때 실행할 동작을 함수로 선언해서
@@ -77,7 +79,8 @@
 
     <br>
     
-    - 🗑️ **Delete** : [Delete To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/bc445f00237a6a53ff5771212831324d3761414b)   
+    - 🗑️ **Delete** :   
+    [Delete To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/bc445f00237a6a53ff5771212831324d3761414b)   
 
       ```
         1. `<TodoItem/>`컴포넌트의 삭제 버튼을 클릭했을 때 실행할 동작을 함수로 선언해서
@@ -91,7 +94,8 @@
 
     <br>
 
-- [ ] 섹션.10 - useReducer
+- [x] 섹션.10 - useReducer :   
+     - 🔗 [section08-useReducer](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section09-useReducer/section08.md)   
 
 <br>
 
