@@ -95,7 +95,7 @@
     <br>
 
 - [x] 섹션.10 - useReducer :   
-     - 🔗 [section08-useReducer](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section09-useReducer/section08.md)   
+     - 🔗 [section09-useReducer](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section09-useReducer/section09.md)   
 
 <br>
 
