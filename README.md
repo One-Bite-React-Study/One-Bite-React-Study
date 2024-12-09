@@ -6,7 +6,7 @@
   
 <br>
 
-- [x] 섹션.04 - Node.js 기초 :   
+- [x] 섹션.04 - Node.js 기초 `package.json`, `Common Js`, `ES Module` :   
   - 🔗 [section03.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section03-nodeJs-basic/section03.md)
 
 <br>
@@ -26,7 +26,7 @@
 
 <br>
 
-- [x] 섹션.08 - 라이프사이클 :   
+- [x] 섹션.08 - 라이프사이클 `useEffect()` :   
   - 🔗 [section07.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section07-lifecycle/section07.md)
 
 <br>
@@ -94,12 +94,13 @@
 
     <br>
 
-- [x] 섹션.10 - useReducer :   
-     - 🔗 [section09-useReducer](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section09-useReducer/section09.md)   
+- [x] 섹션.10 - `useReducer()` :   
+     - 🔗 [section09-useReducer.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section09-useReducer/section09.md)   
 
 <br>
 
-- [ ] 섹션.11 - 최적화
+- [x] 섹션.11 - 최적화 `React.memo()`, `useMeMo()`, `useCallback()` :
+     - 🔗 [section10-optimization.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section10-optimization/section10.md)   
 
 <br>
 
