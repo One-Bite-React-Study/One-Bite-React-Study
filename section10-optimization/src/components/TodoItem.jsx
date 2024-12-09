@@ -25,18 +25,20 @@ const TodoItem = ({ id, content, data, isDone, onUpdate, onDelete, ...rest}) => 
 //       현재의 props -> `nextProps`를 비교해서
 //       콜백의 반환 값에 따라서 props가 바뀌었는지를 판단한다.
 // 2. 판단 값에 따라서 리렌더링을 실행하고 최적화가 된 컴포넌트를 내보낸다.    
-export const MemoizedTodoItem = memo(TodoItem, (prevProps, nextProps)=>{
-  // * 반환값에 따라, Props가 바뀌었는지 안바뀌었는지 판단
-  // - True를 반환 -> Props 바뀌지 않음 -> 리렌더링 X
-  // - False를 반환 -> Props 바뀜 -> 리렌더링 O
+// export const MemoizedTodoItem = memo(TodoItem, (prevProps, nextProps)=>{
+//   // * 반환값에 따라, Props가 바뀌었는지 안바뀌었는지 판단
+//   // - True를 반환 -> Props 바뀌지 않음 -> 리렌더링 X
+//   // - False를 반환 -> Props 바뀜 -> 리렌더링 O
 
-  // 전달받는 `props`에서 객체 타입(Reference Type)인 함수를 제외한 `props`값들을 서로 비교해서 
-  // 값이 바뀌었을 경우 리렌더링 시켜준다.
-  if(prevProps.id !== nextProps.id) return false;
-  if(prevProps.isDone !== nextProps.isDone) return false;
-  if(prevProps.content !== nextProps.content) return false;
-  if(prevProps.date !== nextProps.date) return false;
+//   // 전달받는 `props`에서 객체 타입(Reference Type)인 함수를 제외한 `props`값들을 서로 비교해서 
+//   // 값이 바뀌었을 경우 리렌더링 시켜준다.
+//   if(prevProps.id !== nextProps.id) return false;
+//   if(prevProps.isDone !== nextProps.isDone) return false;
+//   if(prevProps.content !== nextProps.content) return false;
+//   if(prevProps.date !== nextProps.date) return false;
 
-  // 나머지 `props` 값들이 전부 바뀌지 않았다면 true를 반환해서 리렌더링되지 않도록 설정
-  return true;
-}); 
+//   // 나머지 `props` 값들이 전부 바뀌지 않았다면 true를 반환해서 리렌더링되지 않도록 설정
+//   return true;
+// }); 
+
+export const MemoizedTodoItem =  memo(TodoItem);
