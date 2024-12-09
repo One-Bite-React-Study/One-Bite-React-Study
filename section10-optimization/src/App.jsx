@@ -1,6 +1,6 @@
 import { useEffect, useRef, useReducer } from 'react';
+import { MemoizedHeader, Editor, List, Exam } from './components/_index';
 import './App.css';
-import { Header, Editor, List, Exam } from './components/_index';
 
 const mockData = [
   {
@@ -62,8 +62,8 @@ function App() {
   const onDelete = (targetId) => dispatch({ type: 'DELETE', targetId });
 
   return (
-    <div className="App">
-      <Header />
+    <div className="App">      
+      <MemoizedHeader />
       <Editor onCreate={onCreate} />
       <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
       {/* <Exam /> */}

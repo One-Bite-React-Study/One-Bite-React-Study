@@ -1,36 +1,75 @@
-import React, { useState } from 'react';
-import { TodoItem } from './_index';
+import React, { useState, useMemo } from 'react';
+import { MemoizedTodoItem } from './_index';
 import './List.css';
 
 export const List = ({ todos, onUpdate, onDelete }) => {
   const [search, setSearch] = useState('');
 
-  // input에 onChange가 실행될때 마다 해당 값을  `search` state에 설정 
-  const onChangeSearch = ({target: { value }}) => setSearch(value);
+  const onChangeSearch = ({ target: { value } }) => setSearch(value);
 
-  // - 만약 `search`가 빈 문자열이면 `todos`를 반환
-  // - `search` state가 변경되어 해당 컴포넌트가 리렌더링(Update)될 때 마다 `todos`를 필터링해서 반환
   const getFilteredData = () => {
+    if (search === '') return todos;
 
-    if(search === '') return todos;
-
-    return todos.filter(({ content }) => content.toLowerCase().includes(search.toLowerCase()));    
+    return todos.filter(({ content }) => content.toLowerCase().includes(search.toLowerCase()));
   };
 
-  // 컴포넌트가 리렌더링(Update) 될 때 마다 다시 실행되므로 필터링된 반환 값을 화면에 뿌려준다.
   const filteredTodos = getFilteredData();
+
+  //  * 1. ❗️ 컴포넌트가 state 변화로 인해 리렌더링될 때 마다 매번 선언되고 호출되고를 반복하고 있다.
+  // const getAnalyzedData = () => {
+  //   console.log('getAnalyzedData 호출!');
+    
+  //   const totalCount = todos.length; // 총 todo 갯수
+  //   const douneCount = todos.filter((todo) => !todo.isDone).length; // 체크가 안된 todo 갯수
+  //   const notDouneCount = totalCount - douneCount; // 체크가 된 todo 갯수
+
+  //   return {
+  //     totalCount,
+  //     douneCount,
+  //     notDouneCount,
+  //   };
+  // };
+
+  // const { totalCount, douneCount, notDouneCount } = getAnalyzedData();
+
+
+  // * 2. ♻️ 컴포넌트가 렌더링될 때 마다 해당 동작이 불필요하게 실행되지 않도록 메모이제이션
+  //     2.1 최초 렌더링될 때 인자로 전달한 콜백을 실행해 연산을해 값을 반환
+  //     2.2 그 이후에는 의존성 배열에 담긴 값이 변경될 때 만 인자로 전달한 콜백을 실행해서 연산을 해 값을 반환한다.
+  const { totalCount, douneCount, notDouneCount } = useMemo(()=>{
+
+    console.log('getAnalyzedData 호출!');
+    
+    const totalCount = todos.length; // 총 todo 갯수
+    const douneCount = todos.filter((todo) => !todo.isDone).length; // 체크가 안된 todo 갯수
+    const notDouneCount = totalCount - douneCount; // 체크가 된 todo 갯수
+
+    return {
+      totalCount,
+      douneCount,
+      notDouneCount,
+    };
+  }, [todos]); // <- 의존성 배열 : deps  
+  
 
   return (
     <div className="List">
       <h4>Todo List 🌱</h4>
+      <div>
+        <div>total: {totalCount}</div>
+        <div>done: {douneCount}</div>
+        <div>notDone: {notDouneCount}</div>
+      </div>
+
       <input onChange={onChangeSearch} value={search} type="text" placeholder="검색어를 입력하세요" />
 
       <div className="todos_wrapper">
         {/* 필터링된 todos를 화면에 뿌려준다. */}
-        { filteredTodos.length ?  filteredTodos.map((todo) => (
-          <TodoItem key={todo.id} {...todo} onUpdate={onUpdate} onDelete={onDelete} />
-        )) : <p style={{color: '#565656'}}> 검색 결과가 없습니다.. 🥺 </p>      
-        }
+        {filteredTodos.length ? (
+          filteredTodos.map((todo) => <MemoizedTodoItem key={todo.id} {...todo} onUpdate={onUpdate} onDelete={onDelete} />)
+        ) : (
+          <p style={{ color: '#565656' }}> 검색 결과가 없습니다.. 🥺 </p>
+        )}
       </div>
     </div>
   );
