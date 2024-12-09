@@ -23,7 +23,7 @@
 <th align="center">김민준</th>
 <th align="center">최수현</th>
 <th align="center">김지원</th>
-<th align="center">수지</th>
+<th align="center">김수지</th>
 </tr>
 <tr>
 <td align="center" width="170"><a href="https://github.com/hjkimw">@hjkimw</a></td>
