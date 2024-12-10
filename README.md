@@ -2,36 +2,43 @@
    
    
 - [x] 섹션.03 - JavaScript 심화 :   
-  - 🔗 [section02/js](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section02-javascript-advanced/js)
+  - 📁 [section02-javascript-advanced](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section02-javascript-advanced/js)
   
 <br>
 
 - [x] 섹션.04 - Node.js 기초 `package.json`, `Common Js`, `ES Module` :   
-  - 🔗 [section03.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section03-nodeJs-basic/section03.md)
+  - 📁 [section03-nodeJs-basic](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section03-nodeJs-basic)   
+  - 📝 [section03-nodeJs-basic.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section03-nodeJs-basic/section03.md)
 
 <br>
 
 - [x] 섹션.05 - React.js 개론 :   
-  - 🔗 [section04.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section04-ReactJs-introduction/section04.md)
+  - 📁 [section04-ReactJs-introduction](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section04-ReactJs-introduction)   
+  - 📝 [section04-ReactJs-introduction.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section04-ReactJs-introduction/section04.md)
 
 <br>
 
-- [x] 섹션.06 - React.js 입문 :   
-  - 🔗 [section05.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section05-reactJs-practice/section05.md)
+- [x] 섹션.06 - React.js 입문 `useRef()`, `customHook` :   
+  - 📁 [section05-reactJs-practice](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section05-reactJs-practice)   
+  - 📝 [section05-reactJs-practice.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section05-reactJs-practice/section05.md)
 
 <br>
 
 - [x] 섹션.07 - 프로젝트1. 카운터 앱 :   
-  - 🔗 [section06.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section06-counter-app/section06.md)
+  - 📁 [section06-counter-app](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section06-counter-app)   
+  - 📝 [section06-counter-app.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section06-counter-app/section06.md)
 
 <br>
 
 - [x] 섹션.08 - 라이프사이클 `useEffect()` :   
-  - 🔗 [section07.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section07-lifecycle/section07.md)
+  - 📁 [section07-lifecycle](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section07-lifecycle)   
+  - 📝 [section07.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section07-lifecycle/section07.md)
 
 <br>
 
-- [x] 섹션.09 - 프로젝트2. 투두리스트 CRUD
+- [x] 섹션.09 - 프로젝트2. 투두리스트 CRUD   
+    - 📁 [section08-to-do-list-app](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section08-to-do-list-app)   
+
     - 🐣 **Create** :   
     [Create - add To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/bc752b7d9d11207a06623d78d966e76f131e2feb)   
       - input에 값을 입력 후 해당 값을 최상위 부모 컴포넌트 `state`에 추가하기
@@ -80,7 +87,7 @@
     <br>
     
     - 🗑️ **Delete** :   
-    [Delete To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/bc445f00237a6a53ff5771212831324d3761414b)   
+    [Delete - Delete To do](https://github.com/One-Bite-React-Study/One-Bite-React-Study/commit/bc445f00237a6a53ff5771212831324d3761414b)   
 
       ```
         1. `<TodoItem/>`컴포넌트의 삭제 버튼을 클릭했을 때 실행할 동작을 함수로 선언해서
@@ -95,22 +102,26 @@
     <br>
 
 - [x] 섹션.10 - `useReducer()` :   
-     - 🔗 [section09-useReducer.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section09-useReducer/section09.md)   
+    - 📁 [section09-useReducer](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section09-useReducer)   
+     - 📝 [section09-useReducer.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section09-useReducer/section09.md)   
 
 <br>
 
 - [x] 섹션.11 - 최적화 `React.memo()`, `useMeMo()`, `useCallback()` :
-     - 🔗 [section10-optimization.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section10-optimization/section10.md)   
+    - 📁 [section10-optimization](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section10-optimization)   
+    - 📝 [section10-optimization.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section10-optimization/section10.md)   
 
 <br>
 
-- [ ] 섹션.12 - Context
+- [x] 섹션.12 - Context API `createContext()`, `useContext()` :
+    - 📁 [section11-context](https://github.com/One-Bite-React-Study/One-Bite-React-Study/tree/hyungjin/section11-context)   
+    - 📝 [section11-context.md](https://github.com/One-Bite-React-Study/One-Bite-React-Study/blob/hyungjin/section11-context/section11.md)   
 
 <br>
 
-- [ ] 섹션.13 - 프로젝트3. 감정 일기장
+- [ ] 섹션.13 - 프로젝트3. 감정 일기장 1 :
 
 <br>
 
-- [ ] 섹션.14 - 마치면서
+- [ ] 섹션.13 - 프로젝트3. 감정 일기장 2 :
 
