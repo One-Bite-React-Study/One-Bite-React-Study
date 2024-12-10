@@ -1,8 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useContext } from 'react';
 import { MemoizedTodoItem } from './_index';
 import './List.css';
+import { TodoContext } from '../App';
 
-export const List = ({ todos, onUpdate, onDelete }) => {
+export const List = () => {
+
+  const { todos } = useContext(TodoContext);
+
   const [search, setSearch] = useState('');
 
   const onChangeSearch = ({ target: { value } }) => setSearch(value);
@@ -14,23 +18,6 @@ export const List = ({ todos, onUpdate, onDelete }) => {
   };
 
   const filteredTodos = getFilteredData();
-
-  //  * 1. ❗️ 컴포넌트가 state 변화로 인해 리렌더링될 때 마다 매번 선언되고 호출되고를 반복하고 있다.
-  // const getAnalyzedData = () => {
-  //   console.log('getAnalyzedData 호출!');
-    
-  //   const totalCount = todos.length; // 총 todo 갯수
-  //   const douneCount = todos.filter((todo) => !todo.isDone).length; // 체크가 안된 todo 갯수
-  //   const notDouneCount = totalCount - douneCount; // 체크가 된 todo 갯수
-
-  //   return {
-  //     totalCount,
-  //     douneCount,
-  //     notDouneCount,
-  //   };
-  // };
-
-  // const { totalCount, douneCount, notDouneCount } = getAnalyzedData();
 
 
   // * 2. ♻️ 컴포넌트가 렌더링될 때 마다 해당 동작이 불필요하게 실행되지 않도록 메모이제이션
@@ -66,7 +53,7 @@ export const List = ({ todos, onUpdate, onDelete }) => {
       <div className="todos_wrapper">
         {/* 필터링된 todos를 화면에 뿌려준다. */}
         {filteredTodos.length ? (
-          filteredTodos.map((todo) => <MemoizedTodoItem key={todo.id} {...todo} onUpdate={onUpdate} onDelete={onDelete} />)
+          filteredTodos.map((todo) => <MemoizedTodoItem key={todo.id} {...todo}/>)
         ) : (
           <p style={{ color: '#565656' }}> 검색 결과가 없습니다.. 🥺 </p>
         )}

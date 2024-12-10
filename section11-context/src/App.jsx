@@ -1,4 +1,4 @@
-import { useEffect, useRef, useReducer, useCallback } from 'react';
+import { useEffect, useRef, useReducer, useCallback, createContext } from 'react';
 import { MemoizedHeader, Editor, List, Exam } from './components/_index';
 import './App.css';
 
@@ -39,6 +39,18 @@ function reducer(state, action) {
   }
 }
 
+// * 🧑‍🧒‍🧒 Context는 컴포넌트 외부에 선언을 한다.
+// -> 왜냐하면 만약에 컴포넌트 내부에서 Context 객체를 생성하게 되면 
+//    해당 컴포넌트가 리렌더링이 될 때 마다 계속해서 해당 컴포넌트 함수가 재실행 되면서 계속 새로운 Context를 호출하기 때문이다.
+// -> 결국에 Context의 역할은 데이터를 하위 컴포넌트들에게 공급을 해주기만 하면 되므로 
+//    굳이 컴포넌트가 리렌더링 될 때마다 다시 Context가 생성될 필요가 없다.
+export const TodoContext = createContext();
+
+// * `Context.Provider` / <Context.Provider>
+// -> Context가 공급할 데이터를 설정하거나 Context의 데이터를 공급받을 컴포넌트들을 설정하기 위해서 사용하는 프로퍼티이며 컴포넌트이다.
+// console.log(TodoContext.Provider); 
+
+
 function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(todos.length);
@@ -75,9 +87,24 @@ function App() {
   return (
     <div className="App">      
       <MemoizedHeader />
-      <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
-      {/* <Exam /> */}
+      
+      {/* - `<Context.Provider/>`컴포넌트 아래에 있는 모든 컴포넌트들은 전부 다 해당 Context의 데이터를 공급받을 수 있게 된다. */}
+      {/* - 공급할 데이터는 `<Context.Provider/>`컴포넌트에 `value`라는 `props`로 전달을 해주면 된다. */}
+      <TodoContext.Provider 
+        value={{
+          todos,
+          onCreate,
+          onUpdate,
+          onDelete,
+        }} 
+      >
+        {/* <Editor onCreate={onCreate} /> */}
+        <Editor/>
+        
+        {/* <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} /> */}
+        <List/>        
+      </TodoContext.Provider>
+
     </div>
   );
 }
