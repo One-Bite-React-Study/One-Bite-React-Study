@@ -1,11 +1,11 @@
 import React, { useState, useMemo, useContext } from 'react';
 import { MemoizedTodoItem } from './_index';
 import './List.css';
-import { TodoContext } from '../App';
+import { TodoStateContext } from '../App';
 
 export const List = () => {
 
-  const { todos } = useContext(TodoContext);
+  const todos = useContext(TodoStateContext);
 
   const [search, setSearch] = useState('');
 
